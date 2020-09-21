@@ -44,8 +44,11 @@ def main():
 
 		for x in wl:
 			keyboardcontroller.press(x)
+			keyboardcontroller.release(x)
 
 		keyboardcontroller.press(Key.enter)
+		keyboardcontroller.release(Key.enter)
+
 
 		root.after(t, main)
 	elif b == False:
@@ -80,8 +83,13 @@ txtvar.set("")
 timevar=tk.StringVar()
 timevar.set("") 
 
+txtlabel = tk.Label(frame, text="insert time in miliseconds")
+txtlabel.pack()
 txtlbl = tk.Entry(frame, textvariable=txtvar, font=("Calibre",10,"normal"))
 txtlbl.pack()
+
+timelabel = tk.Label(frame, text="insert text you want to spam")
+timelabel.pack()
 timelbl = tk.Entry(frame, textvariable=timevar, font=("Calibre",10,"normal"))
 timelbl.pack()
 
